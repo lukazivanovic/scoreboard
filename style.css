@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    background-color: mediumseagreen;
+    width: 40%;
+}
+
+.scorenumbers {
+    display: flex;
+}
+
+.playerscore{
+    text-align: center;
+    font-size: 30px;
+    width: 40%;
+}
+
+.scorenumbers{
+    justify-content: space-between;
+    align-items: center;
+}
+
+[class*="playernumberscore-"] {
+    background-color: slateblue;
+    justify-content: center;
+    color: yellow;
+    font-weight: bold;
+    padding: 40px 5px;
+    align-items: center;
+}
+
+[class*="playernumberscore-"] span{
+    font-size: 40px;
+}
+
+.material-icons{
+    font-size: 36px;
+}
+
+.tools{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+
+}
+
+.menubutton{
+    display: flex;
+    align-items: center;
+    margin: 10px 5px;
+    padding: 5px;
+    background-color: grey;
+}
