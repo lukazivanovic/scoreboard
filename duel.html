@@ -32,10 +32,9 @@
                 </div>
             </div>
         </div>
-        
         <div class="tools">
             <div class="menubutton">
-                <button>
+                <button id="throwBtn">
                     <div><span class="material-icons">casino</span>
                     </div>
                     <div><span class="material-icons">toll</span>
@@ -44,34 +43,79 @@
                 </button>
             </div>
             <div class="menubutton">
-                <button>
+                <button id="historyBtn">
                     <div><span class="material-icons">menu_book</span>
                     </div>
                     <span>HISTORY</span>
                 </button>
             </div>
             <div class="menubutton">
-                <button>
+                <button id="helpBtn">
                     <div><span class="material-icons">help</span>
                     </div>
                     <span>HELP</span>
                 </button>
             </div>
             <div class="menubutton">
-                <button>
+                <button id="newgameBtn">
                     <div><span class="material-icons">autorenew</span>
                     </div>
                     <span>NEW GAME</span>
                 </button>
             </div>
             <div class="menubutton">
-                <button>
+                <button id="homeBtn">
                     <a href="index.html">
                         <div><span class="material-icons">house</span>
                         </div>
                         <span>HOME</span>
                     </a>
                 </button>
+            </div>
+        </div>
+        
+        <div id="throwModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="calculator" name="calculator" id="calculator" method="post">
+                    <table>
+                        <tr>
+                            <td colspan="4">
+                                <span>Player 1 battle Player 2, </span>
+                                <input type="text" name="result" id="result" disabled>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <input type="text" name="display" id="display" disabled onchange="showRes()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" name="one" value="1" onclick="calculator.display.value += '1'"></td>
+                            <td><input type="button" name="two" value="2" onclick="calculator.display.value += '2'"></td>
+                            <td><input type="button" name="three" value="3" onclick="calculator.display.value += '3'"></td>
+                            <td><input type="button" class="operator" name="plus" value="+" onclick="calculator.display.value += '+'"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" name="four" value="4" onclick="calculator.display.value += '4'"></td>
+                            <td><input type="button" name="five" value="5" onclick="calculator.display.value += '5'"></td>
+                            <td><input type="button" name="six" value="6" onclick="calculator.display.value += '6'"></td>
+                            <td><input type="button" class="operator" name="minus" value="-" onclick="calculator.display.value += '-'"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" name="seven" value="7" onclick="calculator.display.value += '7'"></td>
+                            <td><input type="button" name="eight" value="8" onclick="calculator.display.value += '8'"></td>
+                            <td><input type="button" name="nine" value="9" onclick="calculator.display.value += '9'"></td>
+                            <td><input type="button" class="operator" name="times" value="x" onclick="calculator.display.value += '*'"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" id="clear" name="clear" value="c" onclick="calculator.display.value = ''"></td>
+                            <td><input type="button" name="zero" value="0" onclick="calculator.display.value += '0'"></td>
+                            <td><input type="submit" name="doit" value="=" onclick=""></td>
+                            <td><input type="button" class="operator" name="div" value="/" onclick="calculator.display.value += '/'"></td>
+                        </tr>
+                    </table>
+                </form>
             </div>
         </div>
         
