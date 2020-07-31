@@ -13,21 +13,21 @@
         <div class="scorenumbers">
             <div class="playerscore">
                 <div class="playername-1">
-                    <span>Player 1</span>
+                    <span id="player1name">Player 1</span>
                 </div>
                 <div class="playernumberscore-1" draggable="true">
                     <button>
-                        <span>8000</span>
+                        <span id="player1number">8000</span>
                     </button>
                 </div>
             </div>
             <div class="playerscore">
                 <div class="playername-2">
-                    <span>Player 2</span>   
+                    <span id="player2name">Player 2</span>   
                 </div>
                 <div class="playernumberscore-2" draggable="true">
                     <button>
-                        <span>8000</span>
+                        <span id="player2number">8000</span>
                     </button>
                 </div>
             </div>
@@ -77,7 +77,7 @@
         <div id="throwModal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <form id="calculator" name="calculator" id="calculator" method="post">
+                <form name="calculator" id="calculator" method="post">
                     <table>
                         <tr>
                             <td colspan="4">
@@ -115,6 +115,23 @@
                             <td><input type="button" class="operator" name="div" value="/" onclick="calculator.display.value += '/'"></td>
                         </tr>
                     </table>
+                </form>
+            </div>
+        </div>
+        
+        <div id="startModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <form id="startForm" name="startForm" method="post">
+                    <label for="pl1name">Player 1 Name: </label>
+                    <input type="text" name="pl1name" id="pl1name" required>
+                    <label for="pl2name">Player 2 Name: </label>
+                    <input type="text" name="pl2name" id="pl2name" required>
+                    <label for="pl1num">Player 1 Points: </label>
+                    <input type="number" name="pl1num" id="pl1num" required>
+                    <label for="pl2num">Player 2 Points: </label>
+                    <input type="number" name="pl2num" id="pl2num" required>
+                    <button id="startGameBtn" onsubmit="startGame()">START GAME</button>
                 </form>
             </div>
         </div>
