@@ -7,116 +7,126 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
-    <link rel="stylesheet" href="stylecopy.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="scorenumbers">
-            <div class="playerscore">
-                <div class="playername-1">
-                    <span id="player1name">Player 1</span>
+            <div class="row justify-content-between">
+                <div class="playerscore col-md-5 col-sm-12">
+                    <div class="playername-1">
+                        <span id="player1name">Player 1</span>
+                    </div>
+                    <div class="playernumberscore-1" draggable="true">
+                        <button>
+                            <span id="player1number">8000</span>
+                        </button>
+                    </div>
                 </div>
-                <div class="playernumberscore-1" draggable="true">
-                    <button>
-                        <span id="player1number">8000</span>
-                    </button>
+                <div class="playerscore col-md-5 col-sm-12">
+                    <div class="playername-2">
+                        <span id="player2name">Player 2</span>   
+                    </div>
+                    <div class="playernumberscore-2" draggable="true">
+                        <button>
+                            <span id="player2number">8000</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="playerscore">
-                <div class="playername-2">
-                    <span id="player2name">Player 2</span>   
-                </div>
-                <div class="playernumberscore-2" draggable="true">
-                    <button>
-                        <span id="player2number">8000</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="tools">
-            <div class="menubutton">
-                <button id="throwBtn">
-                    <div><span class="material-icons">casino</span>
-                    </div>
-                    <div><span class="material-icons">toll</span>
-                    </div>
-                    <span>THROW</span>
-                </button>
-            </div>
-            <div class="menubutton">
-                <button id="historyBtn">
-                    <div><span class="material-icons">menu_book</span>
-                    </div>
-                    <span>HISTORY</span>
-                </button>
-            </div>
-            <div class="menubutton">
-                <button id="helpBtn">
-                    <div><span class="material-icons">help</span>
-                    </div>
-                    <span>HELP</span>
-                </button>
-            </div>
-            <div class="menubutton">
-                <button type="button" id="newgameBtn" class="btn btn-primary" data-toggle="modal" data-target="#startModal">
-                    <div><span class="material-icons">autorenew</span>
-                    </div>
-                    <span>NEW GAME</span>
-                </button>
-            </div>
-            <div class="menubutton">
-                <button id="homeBtn">
-                    <a href="index.html">
-                        <div><span class="material-icons">house</span>
-                        </div>
-                        <span>HOME</span>
-                    </a>
-                </button>
             </div>
         </div>
         
-        <div id="throwModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <form name="calculator" id="calculator" method="post">
-                    <table>
-                        <tr>
-                            <td colspan="4">
-                                <span>Player 1 battle Player 2, </span>
-                                <div name="result" id="result"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">
-                                <input type="text" name="display" id="display" disabled onchange="showRes()">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" name="one" value="1" onclick="calculator.display.value += '1'"></td>
-                            <td><input type="button" name="two" value="2" onclick="calculator.display.value += '2'"></td>
-                            <td><input type="button" name="three" value="3" onclick="calculator.display.value += '3'"></td>
-                            <td><input type="button" class="operator" name="plus" value="+" onclick="calculator.display.value += '+'"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" name="four" value="4" onclick="calculator.display.value += '4'"></td>
-                            <td><input type="button" name="five" value="5" onclick="calculator.display.value += '5'"></td>
-                            <td><input type="button" name="six" value="6" onclick="calculator.display.value += '6'"></td>
-                            <td><input type="button" class="operator" name="minus" value="-" onclick="calculator.display.value += '-'"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" name="seven" value="7" onclick="calculator.display.value += '7'"></td>
-                            <td><input type="button" name="eight" value="8" onclick="calculator.display.value += '8'"></td>
-                            <td><input type="button" name="nine" value="9" onclick="calculator.display.value += '9'"></td>
-                            <td><input type="button" class="operator" name="times" value="x" onclick="calculator.display.value += '*'"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="button" id="clear" name="clear" value="c" onclick="calculator.display.value = ''"></td>
-                            <td><input type="button" name="zero" value="0" onclick="calculator.display.value += '0'"></td>
-                            <td><input type="submit" name="doit" value="=" onclick=""></td>
-                            <td><input type="button" class="operator" name="div" value="/" onclick="calculator.display.value += '/'"></td>
-                        </tr>
-                    </table>
-                </form>
+        <div class="tools">
+            <div class="row justify-content-around">
+                <div class="menubutton">
+                    <button id="throwBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#throwModal">
+                        <span class="material-icons">casino</span>
+                        <span class="material-icons">toll</span>
+                        <span>THROW</span>
+                    </button>
+                </div>
+                <div class="menubutton">
+                    <button id="historyBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#historyModal">
+                        <span class="material-icons">menu_book</span>
+                        <span>HISTORY</span>
+                    </button>
+                </div>
+                <div class="menubutton">
+                    <button id="helpBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#helpModal">
+                        <span class="material-icons">help</span>
+                        <span>HELP</span>
+                    </button>
+                </div>
+                <div class="menubutton">
+                    <button type="button" id="newgameBtn" class="btn btn-primary" data-toggle="modal" data-target="#startModal">
+                        <span class="material-icons">autorenew</span>
+                        <span>NEW GAME</span>
+                    </button>
+                </div>
+                <div class="menubutton">
+                    <button id="homeBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#homeModal" onclick="backToHomePage();">
+                        <span class="material-icons">house</span>
+                        <span>HOME</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="throwModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Set a few things</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="calculator" id="calculator" method="post">
+                            <table>
+                                <tr>
+                                    <td colspan="4">
+                                        <span>Player 1 battle Player 2, </span>
+                                        <div name="result" id="result"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <input type="text" name="display" id="display" disabled onchange="showRes()">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" name="one" value="1" onclick="calculator.display.value += '1'"></td>
+                                    <td><input type="button" name="two" value="2" onclick="calculator.display.value += '2'"></td>
+                                    <td><input type="button" name="three" value="3" onclick="calculator.display.value += '3'"></td>
+                                    <td><input type="button" class="operator" name="plus" value="+" onclick="calculator.display.value += '+'"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" name="four" value="4" onclick="calculator.display.value += '4'"></td>
+                                    <td><input type="button" name="five" value="5" onclick="calculator.display.value += '5'"></td>
+                                    <td><input type="button" name="six" value="6" onclick="calculator.display.value += '6'"></td>
+                                    <td><input type="button" class="operator" name="minus" value="-" onclick="calculator.display.value += '-'"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" name="seven" value="7" onclick="calculator.display.value += '7'"></td>
+                                    <td><input type="button" name="eight" value="8" onclick="calculator.display.value += '8'"></td>
+                                    <td><input type="button" name="nine" value="9" onclick="calculator.display.value += '9'"></td>
+                                    <td><input type="button" class="operator" name="times" value="x" onclick="calculator.display.value += '*'"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" id="clear" name="clear" value="c" onclick="calculator.display.value = ''"></td>
+                                    <td><input type="button" name="zero" value="0" onclick="calculator.display.value += '0'"></td>
+                                    <td><input type="submit" name="doit" value="=" onclick=""></td>
+                                    <td><input type="button" class="operator" name="div" value="/" onclick="calculator.display.value += '/'"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -151,7 +161,7 @@
         </div>
         
     </div> 
-    <script src="scriptcopy.js"></script>
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

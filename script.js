@@ -1,3 +1,7 @@
+function backToHomePage(){
+  window.open("index.html","_self");
+}
+
 function showRes(){
   var battleResult = document.getElementById("display").value;
   var calculate = eval(battleResult);

@@ -8,54 +8,25 @@ body{
 }
 
 /** PLAYERS AND SCORES **/
-.scorenumbers {
-    display: flex;
-}
 
-.playerscore{
-    text-align: center;
-    font-size: 30px;
-    width: 40%;
-}
 
-.scorenumbers{
-    justify-content: space-between;
-    align-items: center;
-}
-
-[class*="playernumberscore-"] button {
-    background-color: slateblue;
-    justify-content: center;
-    color: yellow;
-    font-weight: bold;
-    padding: 40px 5px;
-    align-items: center;
+[class*="playernumberscore-"] button{
+    font-size: 40px;
     width: 100%;
 }
 
-[class*="playernumberscore-"] span{
-    font-size: 40px;
+[class*="playername-"] {
+    text-align: center;
+    width: 100%;
 }
 
 /** MENU TOOLS **/
-.material-icons{
-    font-size: 36px;
+.menubutton button span{
+    vertical-align: inherit;
 }
 
-.tools{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-content: space-around;
-    
-}
-
-.menubutton button{
-    display: flex;
-    align-items: center;
-    margin: 10px 5px;
-    padding: 5px;
-    background-color: grey;
+.menubutton{
+    padding: 10px 0px;
 }
 
 /** CALCULATOR **/
