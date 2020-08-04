@@ -8,8 +8,6 @@ body{
 }
 
 /** PLAYERS AND SCORES **/
-
-
 [class*="playernumberscore-"] button{
     font-size: 40px;
     width: 100%;
@@ -18,6 +16,12 @@ body{
 [class*="playername-"] {
     text-align: center;
     width: 100%;
+}
+
+.clock{
+    align-self: center;
+    justify-content: center;
+    font-size: 25px;
 }
 
 /** MENU TOOLS **/

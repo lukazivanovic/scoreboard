@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Document</title>
+    <title>DUEL</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
@@ -13,26 +13,41 @@
     <div class="container">
         <div class="scorenumbers">
             <div class="row justify-content-between">
-                <div class="playerscore col-md-5 col-sm-12">
+                <div class="playerscore col-5">
                     <div class="playername-1">
                         <span id="player1name">Player 1</span>
                     </div>
                     <div class="playernumberscore-1" draggable="true">
                         <button>
-                            <span id="player1number">8000</span>
+                            <span id="player1number" data-toggle="modal" data-target="#att1Modal">8000</span>
                         </button>
                     </div>
                 </div>
-                <div class="playerscore col-md-5 col-sm-12">
+                <div class="playerscore col-5 offset-2">
                     <div class="playername-2">
                         <span id="player2name">Player 2</span>   
                     </div>
                     <div class="playernumberscore-2" draggable="true">
                         <button>
-                            <span id="player2number">8000</span>
+                            <span id="player2number" data-toggle="modal" data-target="#att2Modal">8000</span>
                         </button>
                     </div>
                 </div>
+            </div>
+            
+            <div class="attackAndClock m-3">
+                <div class="row justify-content-around text-center">
+                    <div class="w-100 d-none d-md-block"></div>
+                    <button id="att12Btn" type="button" class="btn btn-primary col-4" data-toggle="modal" data-target="#battleModal">1 -> 2</button>
+                    <div class="clock col-3 col-md-2 col-3">04m:35s</div>
+                    <button id="att21Btn" type="button" class="btn btn-primary col-4" data-toggle="modal" data-target="#att21Modal">1 <- 2</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="infobox">
+            <div class="alert alert-warning text-center" id="infobox" role="alert">
+                A simple alert—check it out!
             </div>
         </div>
         
@@ -72,11 +87,11 @@
             </div>
         </div>
         
-        <div id="throwModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div id="battleModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Set a few things</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Player 1 (add or remove points)</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -86,13 +101,12 @@
                             <table>
                                 <tr>
                                     <td colspan="4">
-                                        <span>Player 1 battle Player 2, </span>
-                                        <div name="result" id="result"></div>
+                                        <span></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <input type="text" name="display" id="display" disabled onchange="showRes()">
+                                        <input type="text" name="display" id="display" disabled>
                                     </td>
                                 </tr>
                                 <tr>
@@ -116,15 +130,11 @@
                                 <tr>
                                     <td><input type="button" id="clear" name="clear" value="c" onclick="calculator.display.value = ''"></td>
                                     <td><input type="button" name="zero" value="0" onclick="calculator.display.value += '0'"></td>
-                                    <td><input type="submit" name="doit" value="=" onclick=""></td>
+                                    <td><input type="submit" name="doit" value="=" onclick="return showRes()"></td>
                                     <td><input type="button" class="operator" name="div" value="/" onclick="calculator.display.value += '/'"></td>
                                 </tr>
                             </table>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -140,21 +150,66 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="startForm" name="startForm" method="post">
-                            <label for="pl1name">Player 1 Name: </label><br>
-                            <input type="text" name="pl1name" id="pl1name" required><br>
-                            <label for="pl2name">Player 2 Name: </label><br>
-                            <input type="text" name="pl2name" id="pl2name" required><br>
-                            <label for="pl1num">Player 1 Points: </label><br>
-                            <input type="number" name="pl1num" id="pl1num" required><br>
-                            <label for="pl2num">Player 2 Points: </label><br>
-                            <input type="number" name="pl2num" id="pl2num" required><br><br>
-                            <button id="startGameBtn" onsubmit="startGame()">START GAME</button>
+                        <form id="startForm" name="startForm" method="post" onsubmit="startGame()">
+                            <div class="form-group">
+                                <label for="pl1name">Player 1 Name: </label>
+                                <input type="text" name="pl1name" id="pl1name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pl2name">Player 2 Name: </label>
+                                <input type="text" name="pl2name" id="pl2name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pl1num">Player 1 Points: </label>
+                                <input type="number" name="pl1num" id="pl1num" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pl2num">Player 2 Points: </label>
+                                <input type="number" name="pl2num" id="pl2num" required>
+                            </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary">START NEW GAME</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="historyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">HISTORY</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="historyText"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">HELP</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="helpText">This is test...</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
