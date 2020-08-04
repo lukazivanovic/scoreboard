@@ -21,7 +21,7 @@ body{
 .clock{
     align-self: center;
     justify-content: center;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 /** MENU TOOLS **/
@@ -34,7 +34,7 @@ body{
 }
 
 /** CALCULATOR **/
-#calculator table {
+.calculator table {
     margin: auto;
     background-color: #222;
     width: 295px;
@@ -45,7 +45,7 @@ body{
     padding-right: 10px;
 }
 
-#calculator input {
+.calculator input {
     outline: 0;
     position: relative;
     left: 5px;
@@ -63,35 +63,8 @@ body{
     margin-bottom: 15px;
 }
 
-#calculator input:hover {
-    border: 0 solid #000;
-    color: #495069;
-    background-color: #fff;
-    border-radius: 4px;
-    width: 60px;
-    height: 50px;
-    float: left;
-    margin: 5px;
-    font-size: 20px;
-    box-shadow: 0 4px #b0d2cf;
-}
-
-#calculator input:active {
-    top: 4px;
-    border: 0 solid #000;
-    color: #495069;
-    background-color: #fff;
-    border-radius: 4px;
-    width: 60px;
-    height: 50px;
-    float: left;
-    margin: 5px;
-    font-size: 20px;
-    box-shadow: none;
-}
-
-#calculator #display,
-#calculator #result {
+.calculator #display,
+.calculator #result {
     width: 265px;
     max-width: 270px;
     font-size: 26px;
@@ -100,60 +73,14 @@ body{
     float: left;
 }
 
-#display:hover {
-    width: 270px;
-    font-size: 26px;
-    text-align: right;
-    background-color: #bcbd95;
-    box-shadow: 0 4px rgba(0,0,0,0.2);
-}
-
-#calculator #display:active,
-#calculator #result:active {
-    top: 5px;
-    width: 270px;
-    font-size: 26px;
-    text-align: right;
-    background-color: #bcbd95;
-    box-shadow: 0 4px rgba(0,0,0,0.2);
-}
-
-#calculator .operator {
+.calculator .operator {
     background-color: #cee9ea;
     position: relative;
 }
 
-#calculator .operator:hover {
-    background-color: #cee9ea;
-    box-shadow: 0 4px #b0d2cf;
-}
-
-#calculator .operator:active {
-    top: 4px;
-    box-shadow: none;
-}
-
-#calculator #clear {
+.calculator #clear {
     float: left;
     position: relative;
     display: block;
     background-color: #ff9fa8;
 }
-
-#calculator #clear:hover {
-    float: left;
-    display: block;
-    background-color: #F297A0;
-    margin-bottom: 15px;
-    box-shadow: 0 4px #CC7F86;
-}
-
-#calculator #clear:active {
-    float: left;
-    top: 4px;
-    display: block;
-    background-color: #F297A0;
-    margin-bottom: 15px;
-    box-shadow: none;
-}
-
