@@ -1,5 +1,6 @@
 window.onload = function() {
   $('#startModal').modal('show');
+  clearInterval(timerVar);
 }
 
 function backToHomePage(){
@@ -36,7 +37,7 @@ function startGame(){
   historyText.innerHTML = "Game started! Player 1 name (left): " + player1name.innerHTML + ", Player 1 points: " + player1number.innerHTML + " / Player 2 (right) name: " + player2name.innerHTML + ", Player 2 points: " + player2number.innerHTML + "<br>";
   infobox.innerHTML = "Game started! Player 1 name (left): " + player1name.innerHTML + ", Player 1 points: " + player1number.innerHTML + " / Player 2 (right) name: " + player2name.innerHTML + ", Player 2 points: " + player2number.innerHTML + "<br>";
   
-  $('#startModal').modal('hide'); 
+  $('#startModal').modal('hide');
 }
 
 function throwCoin(){
@@ -77,15 +78,15 @@ function showRes1() {
   var calculate1 = eval(battleResult1); 
   if(calculate1 < 0) {
     player1number.innerHTML = eval(player1number.innerHTML) + calculate1;
-    historyText.innerHTML += "[time], [" + player1name.innerHTML + "] " + calculate1 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    historyText.innerHTML += "[" + player1name.innerHTML + "] " + calculate1 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
     
-    infobox.innerHTML = "Previous move: " + "[time], [" + player1name.innerHTML + "] " + calculate1 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    infobox.innerHTML = "Previous move: [" + player1name.innerHTML + "] " + calculate1 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
   }
   else if (calculate1 > 0) {
     player1number.innerHTML = eval(player1number.innerHTML) + calculate1;
-    historyText.innerHTML += "[time], [" + player1name.innerHTML + "] +" + calculate1 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    historyText.innerHTML += "[" + player1name.innerHTML + "] +" + calculate1 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
     
-    infobox.innerHTML = "Previous move: " + "[time], [" + player1name.innerHTML + "] +" + calculate1 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    infobox.innerHTML = "Previous move: [" + player1name.innerHTML + "] +" + calculate1 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
   }
   $('#att1Modal').modal('hide');
   battleResult1 = "";
@@ -100,15 +101,15 @@ function showRes2() {
   var calculate2 = eval(battleResult2); 
   if(calculate2 < 0) {
     player2number.innerHTML = eval(player2number.innerHTML) + calculate2;
-    historyText.innerHTML += "[time], [" + player2name.innerHTML + "] " + calculate2 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    historyText.innerHTML += "[" + player2name.innerHTML + "] " + calculate2 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
     
-    infobox.innerHTML = "Previous move: " + "[time], [" + player2name.innerHTML + "] " + calculate2 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    infobox.innerHTML = "Previous move: [" + player2name.innerHTML + "] " + calculate2 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
   }
   else if (calculate2 > 0) {
     player2number.innerHTML = eval(player2number.innerHTML) + calculate2;
-    historyText.innerHTML += "[time], [" + player2name.innerHTML + "] +" + calculate2 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    historyText.innerHTML += "[" + player2name.innerHTML + "] +" + calculate2 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
     
-    infobox.innerHTML = "Previous move: " + "[time], [" + player2name.innerHTML + "] +" + calculate2 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    infobox.innerHTML = "Previous move: [" + player2name.innerHTML + "] +" + calculate2 + ", [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
   }
   $('#att2Modal').modal('hide');
   battleResult2 = "";
@@ -123,15 +124,15 @@ function showRes12() {
   var calculate12 = eval(battleResult12); 
   if(calculate12 > 0) {
     player2number.innerHTML = eval((player2number.innerHTML) - calculate12);
-    historyText.innerHTML += "[time], " + player1name.innerHTML + " -> " + player2name.innerHTML + ", " + player2name.innerHTML + " -" + calculate12 +  " (" + battleResult12 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    historyText.innerHTML += player1name.innerHTML + " -> " + player2name.innerHTML + ", " + player2name.innerHTML + " -" + calculate12 +  " (" + battleResult12 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
     
-    infobox.innerHTML = "Previous move: " + "[time], " + player1name.innerHTML + " -> " + player2name.innerHTML + ", " + player2name.innerHTML + " -" + calculate12 +  " (" + battleResult12 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    infobox.innerHTML = "Previous move: " + player1name.innerHTML + " -> " + player2name.innerHTML + ", " + player2name.innerHTML + " -" + calculate12 +  " (" + battleResult12 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
   }
   else if (calculate12 < 0) {
     player1number.innerHTML = eval((player1number.innerHTML) + calculate12);
-    historyText.innerHTML += "[time], " + player1name.innerHTML + " -> " + player2name.innerHTML + ", " + player1name.innerHTML + " " + calculate12 +  " (" + battleResult12 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    historyText.innerHTML += player1name.innerHTML + " -> " + player2name.innerHTML + ", " + player1name.innerHTML + " " + calculate12 +  " (" + battleResult12 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
     
-    infobox.innerHTML = "Previous move: " + "[time], " + player1name.innerHTML + " -> " + player2name.innerHTML + ", " + player1name.innerHTML + " " + calculate12 +  " (" + battleResult12 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    infobox.innerHTML = "Previous move: " + player1name.innerHTML + " -> " + player2name.innerHTML + ", " + player1name.innerHTML + " " + calculate12 +  " (" + battleResult12 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
   }
   $('#att12Modal').modal('hide');
   battleResult12 = "";
@@ -146,15 +147,15 @@ function showRes21() {
   var calculate21 = eval(battleResult21); 
   if(calculate21 > 0) {
     player1number.innerHTML = eval((player1number.innerHTML) - calculate21);
-    historyText.innerHTML += "[time], " + player2name.innerHTML + " -> " + player1name.innerHTML + ", " + player1name.innerHTML + " -" + calculate21 +  " (" + battleResult21 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    historyText.innerHTML += player2name.innerHTML + " -> " + player1name.innerHTML + ", " + player1name.innerHTML + " -" + calculate21 +  " (" + battleResult21 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
     
-    infobox.innerHTML = "Previous move: " + "[time], " + player2name.innerHTML + " -> " + player1name.innerHTML + ", " + player1name.innerHTML + " -" + calculate21 +  " (" + battleResult21 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    infobox.innerHTML = "Previous move: " + player2name.innerHTML + " -> " + player1name.innerHTML + ", " + player1name.innerHTML + " -" + calculate21 +  " (" + battleResult21 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
   }
   else if (calculate21 < 0) {
     player2number.innerHTML = eval((player2number.innerHTML) + calculate21);
-    historyText.innerHTML += "[time], " + player2name.innerHTML + " -> " + player1name.innerHTML + ", " + player2name.innerHTML + " " + calculate21 +  " (" + battleResult21 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    historyText.innerHTML += player2name.innerHTML + " -> " + player1name.innerHTML + ", " + player2name.innerHTML + " " + calculate21 +  " (" + battleResult21 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
     
-    infobox.innerHTML = "Previous move: " + "[time], " + player2name.innerHTML + " -> " + player1name.innerHTML + ", " + player2name.innerHTML + " " + calculate21 +  " (" + battleResult21 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
+    infobox.innerHTML = "Previous move: " + player2name.innerHTML + " -> " + player1name.innerHTML + ", " + player2name.innerHTML + " " + calculate21 +  " (" + battleResult21 + "), [" + player1name.innerHTML + ": " + player1number.innerHTML + " / " + player2name.innerHTML + ": " + player2number.innerHTML + "] <br>";
   }
   $('#att21Modal').modal('hide');
   battleResult21 = "";
