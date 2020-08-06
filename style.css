@@ -63,7 +63,10 @@ body{
     margin-bottom: 15px;
 }
 
-.calculator #display,
+.calculator #display1,
+.calculator #display2,
+.calculator #display12,
+.calculator #display21,
 .calculator #result {
     width: 265px;
     max-width: 270px;
@@ -83,4 +86,14 @@ body{
     position: relative;
     display: block;
     background-color: #ff9fa8;
+}
+
+/** OTHER MODALS **/
+#startForm,
+#throwModal .col-6
+{
+    text-align: center;
+}
+#throwModal button span{
+    vertical-align: text-top;
 }
