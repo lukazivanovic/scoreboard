@@ -6,6 +6,10 @@ function backToHomePage(){
   window.open("index.html","_self");
 }
 
+window.onbeforeunload = function(event) {
+  event.returnValue = "This will stop the current game.";
+};
+
 var pl1name = document.getElementById("pl1name");
 var pl2name = document.getElementById("pl2name");
 var pl1num = document.getElementById("pl1num");

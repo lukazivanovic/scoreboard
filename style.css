@@ -7,6 +7,10 @@ body{
     width: 100%;
 }
 
+#homepage{
+    background-color: white;
+}
+
 /** PLAYERS AND SCORES **/
 [class*="playernumberscore-"] button{
     font-size: 40px;
