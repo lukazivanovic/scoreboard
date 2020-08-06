@@ -41,7 +41,7 @@
                     <button id="att12Btn" type="button" class="btn btn-primary col-4" data-toggle="modal" data-target="#att12Modal" onclick="modalText12()">1 -> 2</button>
                     <div class="clock col-3 col-md-2 col-3">
                     </div>
-                    <button id="att21Btn" type="button" class="btn btn-primary col-4" data-toggle="modal" data-target="#att21Modal" onclick="modalText21()">1 <- 2</button>
+                    <button id="att21Btn" type="button" class="btn btn-primary col-4" data-toggle="modal" data-target="#att21Modal" onclick="modalText21()">1 &lt;- 2</button>
                 </div>
             </div>
         </div>
@@ -88,11 +88,11 @@
             </div>
         </div>
         
-        <div class="modal fade" id="startModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="startModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelStart" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Set a few things</h5>
+                        <h5 class="modal-title" id="exampleModalLabelStart">Set a few things</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -125,11 +125,11 @@
             </div>
         </div>
         
-        <div class="modal fade" id="throwModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="throwModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelThrow" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">LUCK</h5>
+                        <h5 class="modal-title" id="exampleModalLabelThrow">LUCK</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -239,7 +239,7 @@
                                     <td><input type="button" class="operator" name="times" value="x" onclick="calculator1.display1.value += '*'"></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" id="clear" name="clear" value="c" onclick="calculator1.display1.value = ''"></td>
+                                    <td><input type="button" class="clear" name="clear" value="c" onclick="calculator1.display1.value = ''"></td>
                                     <td><input type="button" name="zero" value="0" onclick="calculator1.display1.value += '0'"></td>
                                     <td><input type="submit" name="doit" value="=" onclick="return showRes1()"></td>
                                     <td><input type="button" class="operator" name="div" value="/" onclick="calculator1.display1.value += '/'"></td>
@@ -287,7 +287,7 @@
                                     <td><input type="button" class="operator" name="times" value="x" onclick="calculator2.display2.value += '*'"></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" id="clear" name="clear" value="c" onclick="calculator2.display2.value = ''"></td>
+                                    <td><input type="button" class="clear" name="clear" value="c" onclick="calculator2.display2.value = ''"></td>
                                     <td><input type="button" name="zero" value="0" onclick="calculator2.display2.value += '0'"></td>
                                     <td><input type="submit" name="doit" value="=" onclick="return showRes2()"></td>
                                     <td><input type="button" class="operator" name="div" value="/" onclick="calculator2.display2.value += '/'"></td>
@@ -335,7 +335,7 @@
                                     <td><input type="button" class="operator" name="times" value="x" onclick="calculator12.display12.value += '*'"></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" id="clear" name="clear" value="c" onclick="calculator12.display12.value = ''"></td>
+                                    <td><input type="button" class="clear" name="clear" value="c" onclick="calculator12.display12.value = ''"></td>
                                     <td><input type="button" name="zero" value="0" onclick="calculator12.display12.value += '0'"></td>
                                     <td><input type="submit" name="doit" value="=" onclick="return showRes12()"></td>
                                     <td><input type="button" class="operator" name="div" value="/" onclick="calculator12.display12.value += '/'"></td>
@@ -383,7 +383,7 @@
                                     <td><input type="button" class="operator" name="times" value="x" onclick="calculator21.display21.value += '*'"></td>
                                 </tr>
                                 <tr>
-                                    <td><input type="button" id="clear" name="clear" value="c" onclick="calculator21.display21.value = ''"></td>
+                                    <td><input type="button" class="clear" name="clear" value="c" onclick="calculator21.display21.value = ''"></td>
                                     <td><input type="button" name="zero" value="0" onclick="calculator21.display21.value += '0'"></td>
                                     <td><input type="submit" name="doit" value="=" onclick="return showRes21()"></td>
                                     <td><input type="button" class="operator" name="div" value="/" onclick="calculator21.display21.value += '/'"></td>
@@ -394,8 +394,6 @@
                 </div>
             </div>
         </div>
-        
-        
         
     </div> 
     <script src="script.js"></script>

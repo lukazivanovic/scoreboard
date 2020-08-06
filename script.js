@@ -1,6 +1,5 @@
 window.onload = function() {
   $('#startModal').modal('show');
-  clearInterval(timerVar);
 }
 
 function backToHomePage(){
