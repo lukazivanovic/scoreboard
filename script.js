@@ -18,6 +18,7 @@ var pl2num = document.getElementById("pl2num");
 var infobox = document.getElementById("infobox");
 var historyText = document.getElementById("historyText");
 
+/** START MODAL */
 function startGame(){
   var player1name = document.getElementById("player1name");
   var player2name = document.getElementById("player2name");
@@ -39,6 +40,7 @@ function startGame(){
   $('#startModal').modal('hide');
 }
 
+/** THROW MODAL */
 function throwCoin(){
   var coinValue = Math.floor(Math.random() * 2);
   if (coinValue == 0) {
@@ -57,6 +59,7 @@ function throwDie(){
   infobox.innerHTML = "Previous move: Roll a die: " + dieValue + "<br>";
 }
 
+/** CUSTOM MODAL TITLES */
 function modalText1(){
   document.getElementById("exampleModalLabel1").innerHTML = player1name.innerHTML + ": add or remove points...";
 }
@@ -70,6 +73,7 @@ function modalText21(){
   document.getElementById("exampleModalLabel21").innerHTML = player2name.innerHTML + " attacking " + player1name.innerHTML + "...";
 }
 
+/** CALCULATORS */
 function showRes1() {
   event.preventDefault();
   var display1 = document.forms["calculator1"]["display1"];
@@ -162,15 +166,16 @@ function showRes21() {
   checkWinConditions();
 }
 
+/** END OF GAME */
 function checkWinConditions(){
   if(eval(player1number.innerHTML) <= 0){
     document.getElementById("exampleModalLabelHis").innerHTML = player2name.innerHTML + " wins! P1:" + player1number.innerHTML + "/P2:" + player2number.innerHTML;
-    historyText.innerHTML += player2name.innerHTML + "wins! P1:" + player1number.innerHTML + "/P2:" + player2number.innerHTML;
+    historyText.innerHTML += player2name.innerHTML + " wins! P1:" + player1number.innerHTML + "/P2:" + player2number.innerHTML;
     $('#historyModal').modal('show');
   }
   else if(eval(player2number.innerHTML) <= 0){
     document.getElementById("exampleModalLabelHis").innerHTML = player1name.innerHTML + " wins! P1:" + player1number.innerHTML + "/P2:" + player2number.innerHTML;
-    historyText.innerHTML += player1name.innerHTML + "wins! P1:" + player1number.innerHTML + "/P2:" + player2number.innerHTML;
+    historyText.innerHTML += player1name.innerHTML + " wins! P1:" + player1number.innerHTML + "/P2:" + player2number.innerHTML;
     $('#historyModal').modal('show');
   }
 }
