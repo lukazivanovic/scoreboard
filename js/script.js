@@ -1,11 +1,3 @@
-window.onload = function() {
-  $('#startModal').modal('show');
-}
-
-function backToHomePage(){
-  window.open("index.html","_self");
-}
-
 window.onbeforeunload = function(event) {
   event.returnValue = "This will stop the current game.";
 };
